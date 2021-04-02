@@ -1,0 +1,40 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+#      ddl-auto: create-drop
+#      ddl-auto: none
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/fmea
+    username: postgres
+    password: ZS160135
+    driverClassName: org.postgresql.Driver
+
+  servlet:
+    multipart:
+      max-file-size: 10000MB
+      max-request-size: 10000MB
+  task:
+    scheduling:
+      pool:
+        size: 10
+  main:
+    banner-mode: off
+
+server:
+  port: 8082
+
+application:
+  name: @project.artifactId@
+build:
+  version: @project.version@
+  timestamp: @timestamp@
+
+fmea:
+  testmode: on
+
+# mvn package -DskipTests
+# mvn clean install -DskipTests
